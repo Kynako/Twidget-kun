@@ -12,7 +12,13 @@
      - cache.js is wrritem by EvanDColeman.
      - license: https://github.com/evandcoleman/scriptable/blob/main/LICENSE
  */
-  
+/* Enviromental variables */
+const ENV = {
+  CK: '__consumer_key__',
+  CS: '__consumer_secret_key__',
+  AT: '__access_token__',
+  AS: '__access_token_secret__'
+};
 
 // Variables used by Scriptable.
 // These must be at the very top of the file. Do not edit.
@@ -110,14 +116,14 @@ const list = [
 // ==================================================
 const fm = FileManager.iCloud();
 const dirPath = fm.joinPath(
-  fm.documentsDirectory(), 'Twidegt-kun/'
+  fm.documentsDirectory(), 'Twidget-kun/'
 );
 if(!fm.fileExists(dirPath)){
   fm.createDirectory(dirPath, false);
+  await saveEnv()
 };
 const ginit = new Ginit();
-await ginit.set(list, fm.documentsDirectory()+'/');
-
+await ginit.set(list, fm.documentsDirectory()+'/')
 // ==================================================
 const CONFIG = {
   screen_name: args.widgetParameter || 'Twitter',
@@ -150,9 +156,6 @@ console.json = (value) => {
   console.log(JSON.stringify(value, null, 2))
 }
 
-const ENV = JSON.parse(
-  fm.readString(fm.bookmarkedPath('Twidget-kun'))
-);
 const CryptoJS = importModule('modules/crypto-js.min')
 const Twista = importModule('Twidget-kun/modules/Twista')
 const tw = new Twista(
@@ -165,13 +168,12 @@ const tw = new Twista(
 );
 // ==================================
 const Cache = importModule('Twidget-kun/modules/cache')
-const cache = new Cache('Twidget-kun/caches');
+const cache = new Cache(`Twidget-kun/caches` );
 const DATA = await getUserData('Twidget-kun', 30)
 console.json(DATA.json);
 
 async function getUserData(name, expirationMinutes){
-  let cache = new Cache(name)
-  let cacheKey = `user`
+  let cacheKey = CONFIG.screen_name
   let cachedUserData = await cache.read(
     cacheKey, expirationMinutes
   )

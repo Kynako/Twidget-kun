@@ -1,6 +1,16 @@
 # Twidget-kun
 A Twitter widget for Scriptable
 
+# Overview
+![Image](assets/IMG_1.jpg)
+
+# Requirement
+- Scriptable 1.6.3
+- [Twista-js](https://github.com/Kynako/Twista-js)
+- [cache](https://github.com/evandcoleman/scriptable/blob/main/scripts/cache.js)
+- [CryptoJS](https://cryptojs.gitbook.io/docs/)
+
+
 # License
 [MIT license](LICENSE)
 - Twista.js: [MIT license](https://github.com/Kynako/Twista-js/blob/main/LICENSE)
