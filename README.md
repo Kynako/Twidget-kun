@@ -10,6 +10,14 @@ A Twitter widget for Scriptable
 - [cache](https://github.com/evandcoleman/scriptable/blob/main/scripts/cache.js)
 - [CryptoJS](https://cryptojs.gitbook.io/docs/)
 
+# How to start
+## Set environmental variables
+![Image](assets/IMG_2.jpg)
+Set your API keys to `ENV` variable on line 9 to 14.
+
+## Using on widget
+![Image](assets/IMG_3.jpg)
+You can designate a Twitter ID to show with widget’s parameter.
 
 # License
 [MIT license](LICENSE)

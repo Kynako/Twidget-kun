@@ -12,7 +12,7 @@
      - cache.js is wrritem by EvanDColeman.
      - license: https://github.com/evandcoleman/scriptable/blob/main/LICENSE
  */
-/* Enviromental variables */
+/* Environmental variables */
 const ENV = {
   CK: '__consumer_key__',
   CS: '__consumer_secret_key__',
